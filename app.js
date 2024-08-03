@@ -2,6 +2,7 @@ const express=require('express')
 const app=express()
 const {data}=require('./data')
 const middleware=require('./middleware')
+const {getPeople,postData}=require('./CONTROLLERS/peopleControllers')
 
 const port=process.env.PORT || 3000
 //app.use is used if all the routes need middleware
@@ -42,7 +43,9 @@ app.get('/products/api/query',(req,res)=>{
     
 
 })
+app.get('/getUsers',getPeople)
 
+app.post('/postData',postData)
 
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`)

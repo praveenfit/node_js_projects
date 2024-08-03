@@ -10,7 +10,8 @@ const port=process.env.PORT || 3000
 app.use(express.json())
 app.use(body.json())
 // app.use(body.urlencoded({extended:false}))
-app.use('/api',productRoute)
+
+// app.use('/api',productRoute)
 
 app.get('/getPeople',(req,res)=>{
     res.json(people)
