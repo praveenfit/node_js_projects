@@ -26,15 +26,29 @@ const postTasks=async (req,res)=>{
     res.status(500).json({message:"Error creating task",error:error.message})
    }
 }
-const putTasks=(req,res)=>{
-    res.send("update tasks")
+const updateTasks=async (req,res)=>{
+    try {
+        const id=req.params.id
+        const updatedTask=req.body
+        const newTask=await task.findByIdAndUpdate(id,updatedTask,{new:true})
+        res.status(200).json({message:"Task updated successfully",data:newTask})
+    } catch (error) {
+        res.status(500).json({message:"Error updating task",error:error.message})
+        
+    }
 }
-const deleteTasks=(req,res)=>{
-    res.send("delete tasks")
+const deleteTasks=async (req,res)=>{
+    try {
+        const taskId=req.params.id
+        const deleteTask=await task.findByIdAndDelete(taskId)
+        res.status(200).json({message:"Task deleted successfully",data:deleteTask})
+    } catch (error) {
+        res.status(500).json({message:"Error deleting task",error:error.message})
+    }
 }
 module.exports={getTasks,
     getSingleTasks,
     postTasks,
-    putTasks,
+    updateTasks,
     deleteTasks
 }
