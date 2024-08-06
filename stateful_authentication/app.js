@@ -18,16 +18,16 @@ app.use(express.static('public'))
 // middleware to take inputs from from
 app.use(express.urlencoded({extended:true}))
 
-const store=new MongoDBStore({
-    uri:process.env.MONGO_URI,
-    collection:'mySessions'
-})
-app.use(session({   
-    secret:process.env.SECRET_KEY,
-    resave:false,
-    saveUninitialized:true,
-    store:store
-}))
+// const store=new MongoDBStore({
+//     uri:process.env.MONGO_URI,
+//     collection:'mySessions'
+// })
+// app.use(session({   
+//     secret:process.env.SECRET_KEY,
+//     resave:false,
+//     saveUninitialized:true,
+//     store:store
+// }))
 
 app.get('/register',(req,res)=>{
     res.render('register')
@@ -55,6 +55,31 @@ app.get('/dashboard',(req,res)=>{
     
 //    }
 // })
+// app.post('/register', async (req, res) => {
+//     const { username, email, password } = req.body;
+
+//     // Check if all fields are provided
+//     if (!username || !email || !password) {
+//         return res.status(400).send('All fields are required');
+//     }
+
+//     try {
+//         const newUser = new userSchema({
+//             username,
+//             email,
+//             password
+//         });
+//         console.log(username,email,password)
+//         await newUser.save();
+//         res.redirect('/login');
+//     } catch (error) {
+//         console.error(error);
+//         if (error) {
+//             return res.status(400).send('Email already exists');
+//         }
+//         res.status(500).send('Error registering user');
+//     }
+// });
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -64,21 +89,47 @@ app.post('/register', async (req, res) => {
     }
 
     try {
+        // Check if the email already exists
+        const existingUser = await userSchema.findOne({ email });
+        if (existingUser) {
+            return res.status(400).send('Email already exists');
+        }
+
         const newUser = new userSchema({
-            username,
-            email,
-            password
+            username: username.trim(),
+            email: email.trim(),
+            password: password.trim()
         });
+
+        console.log('email',req.body.email);
         await newUser.save();
         res.redirect('/login');
     } catch (error) {
-        console.error(error);
-        if (error.code === 11000) {
+        console.error('Error registering user:', error);
+        if (error.code === 11000) { // Duplicate key error
             return res.status(400).send('Email already exists');
         }
         res.status(500).send('Error registering user');
     }
 });
+
+
+
+// get all users from database
+app.get('/users', async (req, res) => {
+    try {
+        const users = await userSchema.find({});
+        res.json(users);
+
+        
+    } catch (error) {   
+        console.error(error);
+        res.status(500).send('Error fetching users');
+    }
+
+})
+
+
 
 
 

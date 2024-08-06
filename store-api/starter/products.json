@@ -1,0 +1,144 @@
+
+    [
+        {
+            "name": "Modern Sofa",
+            "featured": true,
+            "rating": 4.8,
+            "createdAt": "2024-08-01T12:00:00Z",
+            "company": "ikea"
+        },
+        {
+            "name": "Wooden Dining Table",
+            "featured": false,
+            "rating": 4.3,
+            "createdAt": "2024-08-02T12:00:00Z",
+            "company": "caressa"
+        },
+        {
+            "name": "Ergonomic Office Chair",
+            "featured": true,
+            "rating": 4.7,
+            "createdAt": "2024-08-03T12:00:00Z",
+            "company": "liddy"
+        },
+        {
+            "name": "Luxury Bed Frame",
+            "featured": false,
+            "rating": 4.6,
+            "createdAt": "2024-08-04T12:00:00Z",
+            "company": "marcos"
+        },
+        {
+            "name": "Coffee Table",
+            "featured": true,
+            "rating": 4.5,
+            "createdAt": "2024-08-05T12:00:00Z",
+            "company": "ikea"
+        },
+        {
+            "name": "Bookshelf",
+            "featured": false,
+            "rating": 4.2,
+            "createdAt": "2024-08-06T12:00:00Z",
+            "company": "caressa"
+        },
+        {
+            "name": "TV Stand",
+            "featured": true,
+            "rating": 4.9,
+            "createdAt": "2024-08-07T12:00:00Z",
+            "company": "marcos"
+        },
+        {
+            "name": "Recliner Chair",
+            "featured": false,
+            "rating": 4.4,
+            "createdAt": "2024-08-08T12:00:00Z",
+            "company": "liddy"
+        },
+        {
+            "name": "Nightstand",
+            "featured": true,
+            "rating": 4.5,
+            "createdAt": "2024-08-09T12:00:00Z",
+            "company": "ikea"
+        },
+        {
+            "name": "Wardrobe",
+            "featured": false,
+            "rating": 4.1,
+            "createdAt": "2024-08-10T12:00:00Z",
+            "company": "caressa"
+        },
+        {
+            "name": "Office Desk",
+            "featured": true,
+            "rating": 4.7,
+            "createdAt": "2024-08-11T12:00:00Z",
+            "company": "liddy"
+        },
+        {
+            "name": "Patio Set",
+            "featured": false,
+            "rating": 4.6,
+            "createdAt": "2024-08-12T12:00:00Z",
+            "company": "marcos"
+        },
+        {
+            "name": "Kitchen Island",
+            "featured": true,
+            "rating": 4.5,
+            "createdAt": "2024-08-13T12:00:00Z",
+            "company": "ikea"
+        },
+        {
+            "name": "Bar Stool",
+            "featured": false,
+            "rating": 4.3,
+            "createdAt": "2024-08-14T12:00:00Z",
+            "company": "caressa"
+        },
+        {
+            "name": "Floor Lamp",
+            "featured": true,
+            "rating": 4.8,
+            "createdAt": "2024-08-15T12:00:00Z",
+            "company": "liddy"
+        },
+        {
+            "name": "Dresser",
+            "featured": false,
+            "rating": 4.7,
+            "createdAt": "2024-08-16T12:00:00Z",
+            "company": "marcos"
+        },
+        {
+            "name": "Chaise Lounge",
+            "featured": true,
+            "rating": 4.6,
+            "createdAt": "2024-08-17T12:00:00Z",
+            "company": "ikea"
+        },
+        {
+            "name": "Entryway Bench",
+            "featured": false,
+            "rating": 4.4,
+            "createdAt": "2024-08-18T12:00:00Z",
+            "company": "caressa"
+        },
+        {
+            "name": "Vanity Table",
+            "featured": true,
+            "rating": 4.7,
+            "createdAt": "2024-08-19T12:00:00Z",
+            "company": "liddy"
+        },
+        {
+            "name": "Accent Chair",
+            "featured": false,
+            "rating": 4.5,
+            "createdAt": "2024-08-20T12:00:00Z",
+            "company": "marcos"
+        }
+    ]
+    
