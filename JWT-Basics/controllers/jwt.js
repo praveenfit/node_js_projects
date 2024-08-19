@@ -6,7 +6,6 @@
         console.log(username,password)
         const token=jwt.sign({username,password},process.env.SECRET)
         console.log(token)
-
     } else {
         return res.status(400).send({message: "Please enter both username and password"})
         
